@@ -1,6 +1,6 @@
 from Preprocessors import *
 
-def controlIndex(joint1landmark, joint2landmark, unknownAngleLandmark):
-    angle = getAngle(joint1landmark, joint2landmark, unknownAngleLandmark)
-    angle = mapAngle(angle, 57,140,0,180)
+def controlIndex(joint1landmark, joint2landmark):
+    dist = getDistance(joint1landmark, joint2landmark)
+    angle = mapAngle(dist, 0.1, 0.36, 0, 180)
     indexFinger.write(angle)
