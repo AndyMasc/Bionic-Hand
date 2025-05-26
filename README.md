@@ -8,7 +8,7 @@ Unlike most builds that rely on flex sensors or gloves, this system tracks **han
 
 ## 🎥 Demo
 
-*Coming soon — servo fingers following my real hand in real time!*
+*Coming soon
 
 ---
 
