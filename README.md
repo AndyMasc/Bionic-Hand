@@ -46,3 +46,7 @@ bionic-hand/
 ├── preprocessors.py        # Landmark detection & angle calculation
 ├── indexServoControl.py    # Controls index finger servo (more to be added)
 ├── README.md               # You're reading it!
+```
+
+## 🤝 Collaboration
+I'm happy for others to learn from or build on this project, but I'm currently not seeking collaboration.  
