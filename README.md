@@ -1,8 +1,8 @@
 # 🦾 Bionic Hand — Real-Time Servo Control with Computer Vision
 
-This is a robotics project Im building from scratch at 15 years old — a **computer-vision-controlled bionic hand**. It uses **MediaPipe** hand tracking, Python, and an Arduino to replicate human finger movement with servos and 3D-printed fingers.
+This is a robotics project Im building from scratch at 15 years old — a **computer-vision-controlled bionic hand**. It uses **MediaPipe** hand tracking, Python, A bit of C++, and an Arduino to replicate human finger movement with servos and 3D-printed fingers.
 
-Unlike most builds that rely on flex sensors or gloves, this system tracks **hand gestures directly from a camera**, translating finger positions into real-time servo angles — no physical sensors required.
+This system tracks **hand gestures directly from a camera**, translating finger positions into real-time servo angles — no physical sensors required.
 
 ---
 
