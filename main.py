@@ -22,7 +22,7 @@ while True:
             handLandmarks = results.multi_hand_landmarks[0]
             mpDraw.draw_landmarks(frame, handLandmarks, mpHands.HAND_CONNECTIONS)
 
-            controlIndex(handLandmarks.landmark[2], handLandmarks.landmark[8])  #LM2 = thumbKnuckle, LM8 = indexTip
+            controlIndex(handLandmarks.landmark[2], handLandmarks.landmark[8], handLandmarks.landmark[5])  #LM2 = thumbKnuckle, LM8 = indexTip
 
         cv2.imshow('Video Feed', frame)
         if cv2.waitKey(1) == ord('q'):
