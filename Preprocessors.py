@@ -2,11 +2,11 @@ import math, pyfirmata2, cv2
 import mediapipe as mp
 from pyfirmata2 import SERVO
 
-#board = pyfirmata2.Arduino("/dev/cu.usbmodem101")
+board = pyfirmata2.Arduino("/dev/cu.usbmodem101")
 
 # Servo Setup
-#board.digital[9].mode = SERVO
-#indexFinger =  board.digital[9]
+board.digital[9].mode = SERVO
+indexFinger =  board.digital[9]
 
 def mapAngle(x, in_min, in_max, out_min, out_max):
     angle = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
