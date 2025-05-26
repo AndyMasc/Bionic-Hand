@@ -2,6 +2,8 @@
 
 This is a robotics project Im building from scratch at 15 years old — a **computer-vision-controlled bionic hand**. It uses **MediaPipe** hand tracking, Python, A bit of C++, and an Arduino to replicate human finger movement with servos and 3D-printed fingers.
 
+I took inspiration and ideas from DIY TechRush and Murtaza's Workshop - Robotics and AI for this project.
+
 This system tracks **hand gestures directly from a camera**, translating finger positions into real-time servo angles — no physical sensors required.
 
 ---
