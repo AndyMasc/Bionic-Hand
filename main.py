@@ -22,9 +22,9 @@ while True:
             handLandmarks = results.multi_hand_landmarks[0]
             mpDraw.draw_landmarks(frame, handLandmarks, mpHands.HAND_CONNECTIONS)
 
-            controlIndex(handLandmarks.landmark[2], handLandmarks.landmark[8], handLandmarks.landmark[0])  #LM2 = thumbKnuckle, LM8 = indexTip
+            controlIndex(handLandmarks.landmark[8], handLandmarks.landmark[5], handLandmarks.landmark[1])  #LM2 = thumbKnuckle, LM8 = indexTip
 
-        cv2.imshow('Video Feed', frame)
+        cv2.imshow('Video Feed', cv2.flip(frame, 1))
         if cv2.waitKey(1) == ord('q'):
             break
 

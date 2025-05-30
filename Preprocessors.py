@@ -1,6 +1,6 @@
 import math, pyfirmata2, cv2
-import mediapipe as mp
 from pyfirmata2 import SERVO
+import mediapipe as mp
 import numpy as np
 
 board = pyfirmata2.Arduino("/dev/cu.usbmodem101")
@@ -18,6 +18,8 @@ def mapAngle(angle, in_min, in_max, out_min, out_max):
     else:
         return angle
 
-def getAngle(joint1, joint2, unknownAngle):
-    angle = (math.atan2((unknownAngle.y - joint2.y),(unknownAngle.x - joint2.x)) - math.atan2((joint1.y - unknownAngle.y), (joint1.x - unknownAngle.x)))
-    return angle
+def getAngle(a,b,c):
+        a = np.array([a.y - b.y, a.z - b.z])
+        b = np.array([c.y - b.y, c.z - b.z])
+        angle = abs(math.degrees(np.arctan2(b[1], b[0]) - np.arctan2(a[1], a[0])))
+        return angle
