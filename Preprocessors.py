@@ -9,17 +9,29 @@ board = pyfirmata2.Arduino("/dev/cu.usbmodem101")
 board.digital[9].mode = SERVO
 indexFinger =  board.digital[9]
 
+board.digital[5].mode = SERVO
+middleFinger = board.digital[5]
+
+board.digital[3].mode = SERVO
+ringFinger = board.digital[3]
+
+board.digital[10].mode = SERVO
+thumb = board.digital[10]
+
+board.digital[11].mode = SERVO
+pinkyFinger = board.digital[11]
+
 def mapAngle(angle, in_min, in_max, out_min, out_max):
     angle = (angle - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
-    if angle > 180:
-        return 180
-    elif angle < 0:
-        return 0
+    if angle > out_max:
+        return out_max
+    elif angle < out_min:
+        return out_min
     else:
         return angle
 
-def getAngle(a,b,c):
-        a = np.array([a.y - b.y, a.z - b.z])
-        b = np.array([c.y - b.y, c.z - b.z])
-        angle = abs(math.degrees(np.arctan2(b[1], b[0]) - np.arctan2(a[1], a[0])))
-        return angle
+def getAngle(landmark1,landmark2,landmark3):
+    vec1 = np.array([landmark1.y - landmark2.y, landmark1.z - landmark2.z])
+    vec2 = np.array([landmark3.y - landmark2.y, landmark3.z - landmark2.z])
+    angle = abs(np.degrees(np.arctan2(vec2[1], vec2[0]) - np.arctan2(vec1[1], vec1[0])))
+    return angle
