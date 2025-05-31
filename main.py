@@ -1,10 +1,6 @@
 from Preprocessors import *
 
-from ControlIndexServo import *
-from ControlMiddleServo import *
-from ControlRingServo import *
-from ControlThumbServo import *
-from ControlPinkyServo import *
+from ControlServo import *
 
 # main
 cap = cv2.VideoCapture(0)
@@ -26,11 +22,8 @@ while True:
             handLandmarks = results.multi_hand_landmarks[0]
             mpDraw.draw_landmarks(frame, handLandmarks, mpHands.HAND_CONNECTIONS)
 
-            controlIndex(handLandmarks.landmark[8], handLandmarks.landmark[5], handLandmarks.landmark[1])
-            controlMiddle(handLandmarks.landmark[12], handLandmarks.landmark[9], handLandmarks.landmark[0])
-            controlRing(handLandmarks.landmark[16], handLandmarks.landmark[13], handLandmarks.landmark[0])
-            controlThumb(handLandmarks.landmark[4], handLandmarks.landmark[3], handLandmarks.landmark[2])
-            controlPinky(handLandmarks.landmark[20], handLandmarks.landmark[17], handLandmarks.landmark[0])
+            for servo,landmarks in ServoLandmarkDict.items():
+                controlServo(servo, handLandmarks.landmark[landmarks[0]], handLandmarks.landmark[landmarks[1]], handLandmarks.landmark[landmarks[2]])
 
         cv2.imshow('Video Feed', cv2.flip(frame, 1))
         if cv2.waitKey(1) == ord('q'):
