@@ -14,6 +14,7 @@ ringFinger = board.digital[3]
 thumb = board.digital[10]
 pinkyFinger = board.digital[11]
 
+# Lists values in dictionary correspond to hand landmark numbers
 ServoLandmarkDict = {thumb:[4,3,2], indexFinger:[8,5,1], middleFinger:[12,9,0], ringFinger:[16,13,0], pinkyFinger:[20,17,0]}
 
 def mapAngle(angle, in_min, in_max, out_min, out_max):

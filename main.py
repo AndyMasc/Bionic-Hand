@@ -1,5 +1,4 @@
 from Preprocessors import *
-
 from ControlServo import *
 
 # main
@@ -25,7 +24,7 @@ while True:
             for servo,landmarks in ServoLandmarkDict.items():
                 controlServo(servo, handLandmarks.landmark[landmarks[0]], handLandmarks.landmark[landmarks[1]], handLandmarks.landmark[landmarks[2]])
 
-        cv2.imshow('Video Feed', cv2.flip(frame, 1))
+        cv2.imshow('Video Feed', cv2.flip(frame,1))
         if cv2.waitKey(1) == ord('q'):
             break
 cv2.destroyAllWindows()
