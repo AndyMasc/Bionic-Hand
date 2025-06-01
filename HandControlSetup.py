@@ -26,8 +26,12 @@ def mapAngle(angle, in_min, in_max, out_min, out_max):
     else:
         return angle
 
-def getAngle(landmark1,landmark2,landmark3): #landmark2 = unknown angle
-    vec1 = np.array([landmark1.y - landmark2.y, landmark1.z - landmark2.z])
-    vec2 = np.array([landmark3.y - landmark2.y, landmark3.z - landmark2.z])
+def getAngle(landmark1,landmark2,landmark3, plane):
+    if plane == "yz": # All fingers except thumb
+        vec1 = np.array([landmark1.y - landmark2.y, landmark1.z - landmark2.z])
+        vec2 = np.array([landmark3.y - landmark2.y, landmark3.z - landmark2.z])
+    else: # Thumb moves in xz plane
+        vec1 = np.array([landmark1.x - landmark2.x, landmark1.z - landmark2.z])
+        vec2 = np.array([landmark3.x - landmark2.x, landmark3.z - landmark2.z])
     angle = abs(np.degrees(np.arctan2(vec2[1], vec2[0]) - np.arctan2(vec1[1], vec1[0])))
     return angle
