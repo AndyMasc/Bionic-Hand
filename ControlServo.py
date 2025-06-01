@@ -1,4 +1,4 @@
-from Preprocessors import *
+from HandControlSetup import *
 
 def controlServo(servo, landmark1, landmark2, landmark3):
     angle = getAngle(landmark1, landmark2, landmark3, 'yz')

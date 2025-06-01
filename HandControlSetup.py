@@ -7,15 +7,10 @@ board = pyfirmata2.Arduino("/dev/cu.usbmodem101")
 
 # Servo Setup
 board.digital[9].mode = board.digital[5].mode = board.digital[3].mode = board.digital[10].mode = board.digital[11].mode = SERVO
-
-indexFinger =  board.digital[9]
-middleFinger = board.digital[5]
-ringFinger = board.digital[3]
-thumb = board.digital[10]
-pinkyFinger = board.digital[11]
+indexFinger, middleFinger, ringFinger, thumb, pinkyFinger = board.digital[9], board.digital[5], board.digital[3], board.digital[10], board.digital[11]
 
 # Lists values in dictionary correspond to hand landmark numbers
-ServoLandmarkDict = {thumb:[4,3,2], indexFinger:[8,5,1], middleFinger:[12,9,0], ringFinger:[16,13,0], pinkyFinger:[20,17,0]}
+ServoLandmarkDict = {thumb:[4,2,0], indexFinger:[8,5,1], middleFinger:[12,9,0], ringFinger:[16,13,0], pinkyFinger:[20,17,0]}
 
 def mapAngle(angle, in_min, in_max, out_min, out_max):
     angle = (angle - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
