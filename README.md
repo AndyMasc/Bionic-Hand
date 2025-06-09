@@ -17,7 +17,7 @@ This system tracks **hand gestures directly from a camera**, translating finger 
 ## 🧠 How It Works
 
 1. **Hand Tracking**  
-   - Uses [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands) to detect 21 hand landmarks from a webcam feed.
+   - Uses [MediaPipe](https://ai.google.dev/edge/mediapipe/solutions/guide) to detect hand landmarks from a webcam feed.
 
 2. **Angle Calculation**  
    - Measures the angle of each finger by comparing key joint landmarks.
@@ -25,7 +25,7 @@ This system tracks **hand gestures directly from a camera**, translating finger 
 
 3. **Servo Control**  
    - Sends commands to an Arduino using `pyFirmata`.
-   - Controls 5 servos, one per finger (starting with index).
+   - Controls 5 servos, one per finger.
 
 ---
 
@@ -34,10 +34,10 @@ This system tracks **hand gestures directly from a camera**, translating finger 
 - Python 3
 - MediaPipe
 - OpenCV
-- PyFirmata (Arduino control)
+- PyFirmata
 - Arduino Uno / Nano
-- MG90s micro servos
-- 3D-printed finger mechanism (custom design)
+- MG90s servos
+- 3D-printed fingers (InMoov design)
 
 ---
 

@@ -12,8 +12,9 @@ indexFinger, middleFinger, ringFinger, thumb, pinkyFinger = board.digital[9], bo
 # Lists values in dictionary correspond to hand landmark numbers
 ServoLandmarkDict = {thumb:[4,2,0], indexFinger:[8,5,1], middleFinger:[12,9,0], ringFinger:[16,13,0], pinkyFinger:[20,17,0]}
 
-def mapAngle(angle, in_min, in_max, out_min, out_max):
+def mapAngle(angle, in_min, in_max, out_min, out_max): # Maps the captured angle of bent fingers to angles that servos can respond and move to
     angle = (angle - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+    # If mapped angle is out of range, write max/min value servo should move to
     if angle > out_max:
         return out_max
     elif angle < out_min:
@@ -21,12 +22,12 @@ def mapAngle(angle, in_min, in_max, out_min, out_max):
     else:
         return angle
 
-def getAngle(landmark1,landmark2,landmark3, plane):
+def getAngle(landmark1,landmark2,landmark3, plane): # Using 2D vectors for planar joint angles is simpler, faster, and avoids 3D ambiguity.
     if plane == "yz": # All fingers except thumb
-        vec1 = np.array([landmark1.y - landmark2.y, landmark1.z - landmark2.z])
-        vec2 = np.array([landmark3.y - landmark2.y, landmark3.z - landmark2.z])
+        vec1 = np.array([landmark1.z - landmark2.z, landmark1.y - landmark2.y])
+        vec2 = np.array([landmark3.z - landmark2.z, landmark3.y - landmark2.y])
     else: # Thumb moves in xz plane
-        vec1 = np.array([landmark1.x - landmark2.x, landmark1.z - landmark2.z])
-        vec2 = np.array([landmark3.x - landmark2.x, landmark3.z - landmark2.z])
-    angle = abs(np.degrees(np.arctan2(vec2[1], vec2[0]) - np.arctan2(vec1[1], vec1[0])))
+        vec1 = np.array([landmark1.z - landmark2.z, landmark1.x - landmark2.x])
+        vec2 = np.array([landmark3.z - landmark2.z, landmark3.x - landmark2.x])
+    angle = abs(np.degrees(np.arctan2(vec2[0], vec2[1]) - np.arctan2(vec1[0], vec1[1])))
     return angle
