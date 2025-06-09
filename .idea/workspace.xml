@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57c07b33-0b15-4f24-b365-e76546a1eb23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ControlServo.py" beforeDir="false" afterPath="$PROJECT_DIR$/ControlServo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HandControlSetup.py" beforeDir="false" afterPath="$PROJECT_DIR$/HandControlSetup.py" afterDir="false" />
