@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57c07b33-0b15-4f24-b365-e76546a1eb23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/betterCommentsSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HandTracking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HandTracking.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ControlServo.py" beforeDir="false" afterPath="$PROJECT_DIR$/ControlServo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HandControlSetup.py" beforeDir="false" afterPath="$PROJECT_DIR$/HandControlSetup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-    </list>
+    <list default="true" id="57c07b33-0b15-4f24-b365-e76546a1eb23" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,7 +218,7 @@
       <workItem from="1748045893009" duration="6387000" />
       <workItem from="1748053314774" duration="22458000" />
       <workItem from="1758100507488" duration="825000" />
-      <workItem from="1761355905275" duration="22406000" />
+      <workItem from="1761355905275" duration="23050000" />
     </task>
     <task id="LOCAL-00001" summary="Changed to plane based angle calculations dependent on which finger the servo controls">
       <option name="closed" value="true" />
