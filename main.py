@@ -1,4 +1,4 @@
-from HandControlSetup import *
+from HandControlConfig import *
 from ControlServo import *
 import mediapipe as mp
 
